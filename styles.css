@@ -1,0 +1,507 @@
+/* Estilos para a Landing Page do Ebook "LUZ NO FUNDO DO POÇO" */
+
+:root {
+  --color-dark: #0a0a0a;
+  --color-gold: #e6c06e;
+  --color-gold-light: #f0d08e;
+  --color-gold-dark: #c9a45a;
+  --color-text: #f5f5f5;
+  --color-text-dark: #333333;
+  --color-accent: #b85c38;
+  --font-primary: 'Montserrat', sans-serif;
+  --font-secondary: 'Lora', serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-dark);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Seção Hero */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('capa-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(230, 192, 110, 0), rgba(230, 192, 110, 0.3), rgba(230, 192, 110, 0));
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: var(--color-gold);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+}
+
+.hero h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--color-text);
+}
+
+.hero-text {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 1.1rem;
+}
+
+.ebook-mockup {
+  max-width: 300px;
+  margin: 30px auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.ebook-mockup:hover {
+  transform: scale(1.05);
+}
+
+/* Botões */
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: var(--color-gold);
+  color: var(--color-dark);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn:hover {
+  background-color: var(--color-gold-light);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(230, 192, 110, 0.3);
+}
+
+.btn-large {
+  padding: 18px 36px;
+  font-size: 1.2rem;
+}
+
+/* Seções */
+.section {
+  padding: 100px 0;
+}
+
+.section-dark {
+  background-color: var(--color-dark);
+}
+
+.section-light {
+  background-color: #111;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  color: var(--color-gold);
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--color-gold);
+}
+
+/* Seção "Você se Identifica?" */
+.identify-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.identify-item {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--color-gold);
+  border-radius: 0 5px 5px 0;
+}
+
+.transition-text {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-top: 50px;
+  font-style: italic;
+}
+
+.transition-text strong {
+  color: var(--color-gold);
+}
+
+/* Seção "Sobre o Ebook" */
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  padding-right: 40px;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.quote {
+  font-family: var(--font-secondary);
+  font-style: italic;
+  font-size: 1.2rem;
+  padding: 20px;
+  border-left: 3px solid var(--color-gold);
+  margin-top: 30px;
+}
+
+/* Seção "O Que Você Vai Descobrir" */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.benefit-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-number {
+  color: var(--color-gold);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.benefit-title {
+  color: var(--color-gold);
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.highlight-box {
+  background: linear-gradient(135deg, rgba(184, 92, 56, 0.2), rgba(230, 192, 110, 0.2));
+  padding: 30px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 50px auto;
+  max-width: 800px;
+  border: 1px solid var(--color-gold-dark);
+}
+
+/* Seção "Como Funciona" */
+.steps {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.step {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.step-number {
+  flex: 0 0 60px;
+  height: 60px;
+  background-color: var(--color-gold);
+  color: var(--color-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-right: 20px;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--color-gold);
+}
+
+.cta-mid {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Seção "Depoimentos" */
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.testimonial-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 5rem;
+  color: rgba(230, 192, 110, 0.2);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-author {
+  color: var(--color-gold);
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Seção "Perguntas Frequentes" */
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 20px;
+}
+
+.faq-question {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question::after {
+  content: '+';
+  font-size: 1.5rem;
+}
+
+.faq-question.active::after {
+  content: '-';
+}
+
+.faq-answer {
+  display: none;
+  padding-top: 10px;
+}
+
+.faq-answer.show {
+  display: block;
+}
+
+/* Seção Final de Conversão */
+.final-cta {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.final-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: var(--color-gold);
+}
+
+.benefits-summary {
+  margin: 40px 0;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.benefits-summary li {
+  margin-bottom: 15px;
+  padding-left: 30px;
+  position: relative;
+}
+
+.benefits-summary li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-gold);
+  font-weight: bold;
+}
+
+.urgency {
+  font-style: italic;
+  margin: 30px 0;
+  font-size: 1.1rem;
+}
+
+/* Rodapé */
+footer {
+  background-color: #050505;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.social {
+  margin: 20px 0;
+  font-size: 1.2rem;
+}
+
+.social a {
+  color: var(--color-gold);
+  text-decoration: none;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero h2 {
+    font-size: 1.2rem;
+  }
+  
+  .section {
+    padding: 60px 0;
+  }
+  
+  .section-title h2 {
+    font-size: 2rem;
+  }
+  
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .about-text {
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+  
+  .step {
+    flex-direction: column;
+  }
+  
+  .step-number {
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+  
+  .btn-large {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+  }
+}
